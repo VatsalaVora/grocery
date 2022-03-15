@@ -1,0 +1,124 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block banner_slider %}
+<!--Banner Slider-->
+ <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'app/images/banner/b1.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/images/banner/b2.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/images/banner/b3.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+      <div class="carousel-item">
+      <img src="{% static 'app/images/banner/b4.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+
+  </div>
+</div>
+<div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+<!-- End Banner Slider -->
+{% endblock banner_slider %}
+
+
+
+{% block main-content %}
+<!-- 1st Product Slider -->
+<div class="m-3">
+ <h2>Spices</h2>
+ <!-- Slider 1 -->
+ <div class="owl-carousel" id="slider1">
+    {% for S in Spices %}
+     <a href="{% url 'product-detail' S.id%}" class="btn"><div class="item"><img src="{{S.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{S.title}}</span><br><span class="fs-5">Rs.{{S.discounted_price}} </span></div></a>
+{% endfor %}
+ </div>
+</div>
+<!-- End 1st Product Slider -->
+
+<!-- Payment Info Section -->
+<div class="container my-5">
+ <div class="row">
+  <div class="col-sm-3">
+   <div class="card mb-3">
+     <div class="card-body">
+     <img src="{% static 'app/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+     </div>
+   </div>
+  </div>
+  <div class="col-sm-3">
+   <div class="card mb-3">
+     <div class="card-body">
+      <img src="{% static 'app/images/payavail/upi.jpg' %}" alt="" srcset="" class="img-fluid">
+     </div>
+   </div>
+  </div>
+  <div class="col-sm-3">
+   <div class="card mb-3">
+     <div class="card-body">
+      <img src="{% static 'app/images/payavail/nb.jpg' %}" alt="" srcset="" class="img-fluid">
+     </div>
+   </div>
+  </div>
+  <div class="col-sm-3">
+   <div class="card mb-3">
+     <div class="card-body">
+      <img src="{% static 'app/images/payavail/bj.jpg' %}" alt="" srcset="" class="img-fluid">
+     </div>
+   </div>
+  </div>
+ </div>
+</div>
+<!-- End Payment Info Section -->
+
+<!-- 2nd Product Slider -->
+<div class="mx-3">
+ <h2>Fresh Fruits</h2>
+ <!-- Slider 2 -->
+ <div class="owl-carousel" id="slider2">
+       {% for F in Fruits %}
+     <a href="{% url 'product-detail' F.id%}" class="btn"><div class="item"><img src="{{F.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{F.title}}</span><br><span class="fs-5">Rs.{{F.discounted_price}}</span></div></a>
+{% endfor %}
+
+ </div>
+</div>
+<!-- End 2nd Product Slider -->
+<!-- 3rd Product Slider -->
+<div class="mx-3">
+ <h2>Fresh Vegetables</h2>
+ <!-- Slider 3 -->
+ <div class="owl-carousel" id="slider3">
+       {% for V in Vegetables %}
+     <a href="{% url 'product-detail' V.id%}" class="btn"><div class="item"><img src="{{V.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{V.title}}</span><br><span class="fs-5">Rs.{{V.discounted_price}}</span></div></a>
+{% endfor %}
+
+ </div>
+</div>
+<!-- End 3rd Product Slider -->
+<!-- 4th Product Slider -->
+<div class="mx-3">
+ <h2>Raw Food</h2>
+ <!-- Slider 4 -->
+ <div class="owl-carousel" id="slider4">
+       {% for RF in RawFood %}
+     <a href="{% url 'product-detail' RF.id%}" class="btn"><div class="item"><img src="{{RF.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{RF.title}}</span><br><span class="fs-5">Rs.{{RF.discounted_price}}</span></div></a>
+{% endfor %}
+
+ </div>
+</div>
+<!-- End 4th Product Slider -->
+{% endblock main-content %}
+
