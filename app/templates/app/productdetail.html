@@ -6,11 +6,13 @@
  <div class="row">
   <div class="col-sm-6 text-center align-self-center">
    <img src="{{product.product_image.url}}" alt="" class="img-fluid img-thumbnail">
+
   </div>
   <div class="col-sm-5 offset-sm-1">
+   <h1><span class="widertext" style="color:green">&#8865;</span></h1>
    <h2>{{product.title}}</h2>
    <hr>
-   <p>{{product.description}}</p> <br>
+
    <h4>Rs. {{product.discounted_price}} <small class="fw-light text-decoration-line-through">Rs. {{product.selling_price}}</small></h4> <br>
    {% if request.user.is_authenticated %}
    {% if item_already_in_cart %}
@@ -33,12 +35,19 @@
    </form>
    {% endif %}
 
-   <a href="{% url 'checkout' %}" class="btn btn-danger shadow px-5 py-2 ms-4">Buy Now</a>
+   <a href="{% url 'checkout' %}" class="btn btn-danger shadow px-5 py-2 ms-4">Buy Now</a><br>
+
+   <h5 class="mt-5" style="color:Green;">In Stock</h5>
+
+  <h5 class="mt-5" >Description:</h5>
+   <ul>
+    <li>{{product.description}}</li>
+   </ul>
+
    <h5 class="mt-5">Available Offers</h5>
    <ul>
     <li>Bank Offer: 5% cashback on Axis Bank Credit card</li>
     <li>Special Price Get Extra Rs.500 off</li>
-
    </ul>
 
   </div>
