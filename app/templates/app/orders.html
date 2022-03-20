@@ -9,7 +9,9 @@
    <ul class="list-unstyled">
     <li class="d-grid"><a href="{% url 'orders' %}" class="btn btn-primary">Orders</a></li>
    </ul>
+
   </div>
+  <h3><span style="color:blue;">Order Placed Successfully......!</span></h3>
   <div class="col-sm-9 offset-sm-1">
    {% for op in order_placed %}
    <div class="row shadow-sm mb-3">
@@ -17,6 +19,7 @@
      <img src="{{op.product.product_image.url}}" alt="" srcset="" class="img-fluid" height="150" width="150">
 
     </div>
+
     <div class="col-sm-7">
      <p>Product: {{op.product.title}}</p>
      <p>Quantity: {{op.quantity}}</p>
@@ -50,6 +53,7 @@
       </div>
     </div>
        {% endfor %}
+
   </div>
   </div>
  </div>

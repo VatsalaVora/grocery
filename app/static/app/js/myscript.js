@@ -1,17 +1,17 @@
 $('#slider1, #slider2, #slider3, #slider4').owlCarousel({
-    loop: true,
-    margin: 20,
+    loop: false,
+    margin: 50,
     responsiveClass: true,
     responsive: {
         0: {
             items: 1,
-            nav: false,
+            nav: true,
             autoplay: true,
         },
         600: {
             items: 3,
-            nav: true,
-            autoplay: true,
+            nav: true ,
+            autoplay:true,
         },
         1000: {
             items: 5,
@@ -71,3 +71,4 @@ $('.remove-cart').click(function(){
         }
     })
 })
+;

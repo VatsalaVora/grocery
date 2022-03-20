@@ -16,7 +16,7 @@ class CustomerRegistrationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['username','email','password1', 'password2']
+        fields = ['username', 'email', 'password1', 'password2']
         labels = {'email': 'Email'}
         widgets = {'username': forms.TextInput(attrs={'class': 'form-control'}),
                    }
@@ -56,7 +56,7 @@ class CustomerProfileForm(forms.ModelForm):
         model = Customer
         fields = ['name','mobile', 'locality', 'city', 'state', 'zipcode']
         widgets = {'name': forms.TextInput(attrs={'class': 'form-control'}),
-                   'mobile': forms.NumberInput(attrs={'class':'form-control'}),
+                   'mobile': forms.NumberInput(attrs={'class': 'form-control'}),
                    'locality': forms.TextInput(attrs={'class': 'form-control'}),
                    'city': forms.TextInput(attrs={'class': 'form-control'}),
                    'state': forms.Select(attrs={'class': 'form-control'}),
